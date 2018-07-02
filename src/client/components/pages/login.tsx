@@ -24,7 +24,7 @@ export class PageLogin extends React.Component<{}, State> {
             <p>現在Yづドンでのみ利用できます。</p>
             <form action="javascript://" onSubmit={this.send.bind(this)}>
                 <FormGroup>
-                    <Input name="instance" value="mstdn.y-zu.org"/>
+                    <Input name="instance" value="mstdn.y-zu.org" readonly/>
                     <datalist id="major-instances">
                         {majorInstances.map((instance) => <option value={instance} />)}
                     </datalist>
