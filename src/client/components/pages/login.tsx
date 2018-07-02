@@ -21,15 +21,22 @@ export class PageLogin extends React.Component<{}, State> {
         return <div>
             <Title>ログイン</Title>
             <h1>ログイン</h1>
-            <p>負荷対策のため、Yづドンのみでログインができます。</p>
+            <p>現在Yづドンでのみ利用できます。</p>
             <form action="javascript://" onSubmit={this.send.bind(this)}>
                 <FormGroup>
-                    <Input name="instance" readonly="readonly" value="mstdn.y-zu.org"/>
+                    <Input name="instance" placeholder="mastodon.social" list="major-instances"/>
+                    <datalist id="major-instances">
+                        {majorInstances.map((instance) => <option value={instance} />)}
+                    </datalist>
                 </FormGroup>
                 <Button type="submit" color="primary" disabled={loading}>{ loading ? "読み込み中" : "ログイン" }</Button>
+                <span>&nbsp;もしくは&nbsp;</span>
+                <Button type="button" color="secondary" disabled={loading} onClick={this.twitterLogin.bind(this)}>
+                    { loading ? "読み込み中" : "Twitterでログイン" }
+                </Button>
             </form>
         </div>
-    
+    }
 
     send(e: any) {
         const form = new FormData(e.target)
