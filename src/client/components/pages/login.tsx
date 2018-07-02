@@ -21,10 +21,10 @@ export class PageLogin extends React.Component<{}, State> {
         return <div>
             <Title>ログイン</Title>
             <h1>ログイン</h1>
-            <p>現在Yづドンでのみ利用できます。</p>
+            <p>現在Yづドンでのみ利用してください。</p>
             <form action="javascript://" onSubmit={this.send.bind(this)}>
                 <FormGroup>
-                    <Input name="instance" value="mstdn.y-zu.org" ReadOnly/>
+                    <Input name="instance" value="mstdn.y-zu.org"/>
                     <datalist id="major-instances">
                         {majorInstances.map((instance) => <option value={instance} />)}
                     </datalist>
