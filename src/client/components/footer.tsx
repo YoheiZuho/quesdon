@@ -8,6 +8,7 @@ export class Footer extends React.Component {
             <p>Quesdon は AGPL-3.0 で提供されています。<a href={upstreamUrl}>ソースコード</a>&nbsp;
             (<a href={`${upstreamUrl}/commits/${gitVersion}`}>{gitVersion.slice(0, 7)}</a>)</p>
             <p>開発者: <a href="https://mstdn.maud.io/@rinsuki">@rinsuki@mstdn.maud.io</a></p>
+            <p>このQuesdonサーバーはPCGFが運営し、quesdon.rinsuki.netとは別に建てられたサーバーです。サーバーのエラーなどはPCGFにご報告よろしくお願いします。</p>
             <p>
                 {usingDarkTheme
                 ?   <a href="#" onClick={this.leaveDarkTheme.bind(this)}>ダークテーマから戻す</a>
